@@ -28,6 +28,7 @@ public class Pizza {
             this.price=400;
             this.toppingsPrice=120;
         }
+
         this.cheesePrice=80;
         this.bagPrice=20;
     }
@@ -38,16 +39,15 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        if(cheeseAdded==false){
+        if(!cheeseAdded){
             price=price+cheesePrice;
             cheeseAdded=true;
         }
-
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(toppingsAdded==false){
+        if(!toppingsAdded){
             price=price+toppingsPrice;
             toppingsAdded=true;
         }
@@ -56,7 +56,7 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-        if(bagTaken==false){
+        if(!bagTaken){
             price=price+bagPrice;
             bagTaken=true;
         }
@@ -65,7 +65,6 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        this.bill=price+"";
-        return this.bill;
+        return price+"";
     }
 }
