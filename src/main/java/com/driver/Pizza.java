@@ -3,7 +3,9 @@ package com.driver;
 public class Pizza {
 
     private int price;
+
     private Boolean isVeg;
+
     private String bill;
 
     private int cheesePrice;
@@ -13,8 +15,16 @@ public class Pizza {
     private int bagPrice;
 
     private boolean cheeseAdded;
+
     private boolean toppingsAdded;
+
     private boolean bagTaken;
+
+    private boolean billGenerate;
+
+    public Pizza(){
+
+    }
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -31,10 +41,14 @@ public class Pizza {
 
         this.cheesePrice=80;
         this.bagPrice=20;
+
+        this.bill="Base Price Of The Pizza: "+this.price+"\n";
     }
 
     public int getPrice(){
+
         return this.price;
+
     }
 
     public void addExtraCheese(){
@@ -42,6 +56,7 @@ public class Pizza {
         if(!cheeseAdded){
             price=price+cheesePrice;
             cheeseAdded=true;
+            this.bill=bill+"Extra Cheese Added: "+this.cheesePrice+"\n";
         }
     }
 
@@ -50,6 +65,7 @@ public class Pizza {
         if(!toppingsAdded){
             price=price+toppingsPrice;
             toppingsAdded=true;
+            this.bill=bill+"Extra Toppings Added: "+this.toppingsPrice+"\n";
         }
 
     }
@@ -59,12 +75,18 @@ public class Pizza {
         if(!bagTaken){
             price=price+bagPrice;
             bagTaken=true;
+            this.bill=bill+"Paperbag Added: "+this.bagPrice+"\n";
         }
 
     }
 
+
+
+
     public String getBill(){
         // your code goes here
-        return price+"";
+
+        this.bill=bill+"Total Price: "+this.price+"\n";
+        return bill;
     }
 }
